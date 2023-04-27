@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class botonJugar : MonoBehaviour
+public class SeleccionarNivel : MonoBehaviour
 {
-    public void IrAlJuego()
+    
+    public void CargarNivel(int nivel)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(nivel);
     }
+
 }

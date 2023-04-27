@@ -63,6 +63,6 @@ public class controlPuntaje : MonoBehaviour
     public IEnumerator CambiarEscena()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }

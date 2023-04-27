@@ -35,7 +35,7 @@ public class controlPuntaje : MonoBehaviour
         {
             this.ganador.gameObject.SetActive(true);
             TextMeshProUGUI gn = this.ganador.GetComponent<TextMeshProUGUI>();
-            gn.text = "2INNER! PLAYER 2";
+            gn.text = "WINNER! PLAYER 2";
             Destroy(pelota);
             StartCoroutine(this.CambiarEscena());
         }

@@ -5,10 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class SeleccionarNivel : MonoBehaviour
 {
-    
+    //private Animator anim;
+
+    private void Start()
+    {
+        //anim = GetComponent<Animator>();
+    }
     public void CargarNivel(int nivel)
     {
-        SceneManager.LoadScene(nivel);
+        StartCoroutine(Cargar(nivel));
     }
+
+    public IEnumerator Cargar(int sceneIndex)
+    {
+        //anim.SetTrigger("Inicio");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(sceneIndex);
+    }
+
 
 }

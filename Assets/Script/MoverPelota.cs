@@ -43,14 +43,14 @@ public class MoverPelota : MonoBehaviour
         if (comienzaJugador1)
         {
             this.gameObject.transform.localPosition = new Vector3(-4, 5, 0);
-            j1.gameObject.transform.localPosition = new Vector3(-5, 2, 0);
-            j2.gameObject.transform.localPosition = new Vector3(5, 2, 0);
+            j1.gameObject.transform.localPosition = new Vector3(-5, 2, 64);
+            j2.gameObject.transform.localPosition = new Vector3(5, 2, 64);
         }
         else
         {
             this.gameObject.transform.localPosition = new Vector3(4, 5, 0);
-            j1.gameObject.transform.localPosition = new Vector3(-5, 2, 0);
-            j2.gameObject.transform.localPosition = new Vector3(5, 2, 0);
+            j1.gameObject.transform.localPosition = new Vector3(-5, 2, 64);
+            j2.gameObject.transform.localPosition = new Vector3(5, 2, 64);
         }
     }
 

@@ -13,6 +13,7 @@ public class controlPuntaje : MonoBehaviour
     public GameObject textoPuntaje2;
     public GameObject ganador;
     public GameObject pelota;
+    public Animator anim;
 
     public int metaParaGanar;
     private void Start()
@@ -62,6 +63,7 @@ public class controlPuntaje : MonoBehaviour
     
     public IEnumerator CambiarEscena()
     {
+        anim.SetTrigger("Entrada");
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(3);
     }

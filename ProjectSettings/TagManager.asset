@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - escalera
+  - Casilla1A
+  - Letra1A
   layers:
   - Default
   - TransparentFX

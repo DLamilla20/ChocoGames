@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 1558228904}
   - component: {fileID: 1558228903}
   m_Layer: 0
-  m_Name: Sirve p
+  m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

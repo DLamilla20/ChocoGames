@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2257616952350583248}
   - component: {fileID: 2257616952350583249}
   m_Layer: 0
-  m_Name: Letra1
+  m_Name: Letra5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -866939287, guid: d7e43a53340ec1e45adcbfff60af173a, type: 3}
+  m_Sprite: {fileID: -343579434, guid: 46db91d2c1277ea449fa2a2358f3a14f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,10 +95,10 @@ GameObject:
   - component: {fileID: 2257616952492082526}
   - component: {fileID: 2257616952492082521}
   - component: {fileID: 2257616952492082520}
-  - component: {fileID: 2257616952492082523}
+  - component: {fileID: -6094810251661054390}
   m_Layer: 0
-  m_Name: Letra1
-  m_TagString: Letra1A
+  m_Name: Letra5
+  m_TagString: Letra1B
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.03014648, y: 0.004242435}
   m_EdgeRadius: 0
---- !u!114 &2257616952492082523
+--- !u!114 &-6094810251661054390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2257616952492082522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209166e55de0e254a8153091bc6bdb24, type: 3}
+  m_Script: {fileID: 11500000, guid: c70abd4c4ecc7d9458561b66c31d69b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 3.5

@@ -8,7 +8,7 @@ public class ParedFinalB : MonoBehaviour
 {
     public GameObject Stop;
     public int intentos;
-    public int contadorB;
+    private int contadorB;
     public bool completo = false;
     public GameObject texto;
     // Start is called before the first frame update

@@ -18,10 +18,12 @@ public class JugadorLadoB : MonoBehaviour
     {
         TextMeshProUGUI etiquetaPuntaje1 = this.texto.GetComponent<TextMeshProUGUI>();
         etiquetaPuntaje1.text = this.puntaje.ToString();
+
     }
 
     public void PuntajeLadoB()
     {
         puntaje++;
     }
+
 }

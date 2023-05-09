@@ -23,7 +23,7 @@ public class ParedFinalB : MonoBehaviour
         TextMeshProUGUI intentoB = this.texto.GetComponent<TextMeshProUGUI>();
         intentoB.text = this.intentos.ToString();
 
-        
+
         if (contadorB == 2)
         {
             completo = true;
@@ -37,16 +37,7 @@ public class ParedFinalB : MonoBehaviour
             completo = false;
         }
 
-        if (completo)
-        {
-            intentos += 1;
-            print("Intento " + intentos);
-            if (intentos == 0)
-            {
-                print("Sin vidas");
-            }
-            
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +57,26 @@ public class ParedFinalB : MonoBehaviour
             contadorB--;
 
 
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Letra1B")
+        {
+            if (completo)
+            {
+                intentos += 1;
+                print("Intento " + intentos);
+                if (intentos == 3)
+                {
+                    print("Sin vidas");
+                    SceneManager.LoadScene(3);
+                }
+
+            }
+            
+            print("Estuvo aqui");
         }
     }
 }

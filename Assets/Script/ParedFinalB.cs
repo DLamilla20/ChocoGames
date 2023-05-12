@@ -7,7 +7,7 @@ using TMPro;
 public class ParedFinalB : MonoBehaviour
 {
     public GameObject Stop;
-    public int intentos;
+    public int intentos;  //uno
     private int contadorB;
     public bool completo = false;
     public GameObject texto;

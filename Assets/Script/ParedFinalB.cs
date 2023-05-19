@@ -7,8 +7,10 @@ using TMPro;
 public class ParedFinalB : MonoBehaviour
 {
     public GameObject Stop;
-    public int intentos;
-    private int contadorB;
+
+    public int intentos;  //uno
+    private int contadorB;//montes de mrd
+
     public bool completo = false;
     public GameObject texto;
     // Start is called before the first frame update

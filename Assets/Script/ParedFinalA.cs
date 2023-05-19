@@ -6,9 +6,8 @@ using TMPro;
 
 public class ParedFinalA : MonoBehaviour
 {
-    public GameObject Stop;
+    
     public int intentos = 0;
-    public GameObject texto;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +17,7 @@ public class ParedFinalA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextMeshProUGUI intentoA = this.texto.GetComponent<TextMeshProUGUI>();
-        intentoA.text = this.intentos.ToString();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

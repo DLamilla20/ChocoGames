@@ -8,12 +8,13 @@ public class LogicaLetra5 : MonoBehaviour
     public float velocidad;
     public int contador = 0;
     public bool adentro = false;
-    //public JugadorLadoA j1;
+    public AudioSource Do;
     // Start is called before the first frame update
     void Start()
     {
 
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -30,11 +31,14 @@ public class LogicaLetra5 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+        
             if (adentro) 
             {
-                print("Tecla Arriba");
-                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();               
+                
+                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
+                this.Do.Play();
                 Destroy(this.gameObject);
+                
             }
         }
     }

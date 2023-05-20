@@ -65,6 +65,7 @@ public class controlPuntaje : MonoBehaviour
     {
         anim.SetTrigger("Entrada");
         yield return new WaitForSeconds(1);
+        ControladorEscena.Instace.IdEscena();
         //SceneManager.LoadScene(3);
     }
 }

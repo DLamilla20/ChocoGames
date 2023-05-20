@@ -33,9 +33,9 @@ public class LogicaLetra8 : MonoBehaviour
             
             if (adentro) 
             {
-                
-                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
                 this.Sol.Play();
+                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
+                
                 Destroy(this.gameObject);
                
             }

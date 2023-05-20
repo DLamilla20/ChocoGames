@@ -33,9 +33,9 @@ public class LogicaLetra6 : MonoBehaviour
             
             if (adentro) 
             {
-                
-                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
                 this.Re.Play();
+                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
+                
                 Destroy(this.gameObject);
                 
             }

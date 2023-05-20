@@ -6,7 +6,8 @@ public class Generador1A : MonoBehaviour
 {
     public GameObject[] Gene1A;
     private float tiempoEntreLetras;
-    public float comienzoDeTiempo;
+    private float comienzoDeTiempo;
+    public JugadorLadoA pt;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,20 @@ public class Generador1A : MonoBehaviour
         {
             int random = Random.Range(0, Gene1A.Length);
             Instantiate(Gene1A[random],this.transform.position,Quaternion.identity);
+
+            int pts = pt.puntaje;
+            if (pts <= 10)
+            {
+                comienzoDeTiempo = 1.5f;
+            }
+            else if (pts >= 10 && pts <= 20)
+            {
+                comienzoDeTiempo = 1.1f;
+            }
+            else
+            {
+                comienzoDeTiempo = 0.7f;
+            }
 
             tiempoEntreLetras = comienzoDeTiempo;
         }

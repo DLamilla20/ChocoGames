@@ -24,7 +24,7 @@ public class ControladorEscena : MonoBehaviour
 
     public void IdEscena()
     {
-        int idEscena = 5;
+        int idEscena = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(idEscena);
         print(idEscena);
     }

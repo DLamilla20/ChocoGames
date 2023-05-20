@@ -10,12 +10,7 @@ public class LogicaLetra5 : MonoBehaviour
     public bool adentro = false;
     public AudioSource Do;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-    
-
+ 
     // Update is called once per frame
     void Update()
     {
@@ -31,12 +26,12 @@ public class LogicaLetra5 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-        
+            
             if (adentro) 
             {
-                
-                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
                 this.Do.Play();
+                GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
+                
                 Destroy(this.gameObject);
                 
             }

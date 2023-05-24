@@ -30,10 +30,10 @@ public class LogicaLetra8 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            
+            this.Sol.Play();
             if (adentro) 
             {
-                this.Sol.Play();
+                
                 GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
                 
                 Destroy(this.gameObject);

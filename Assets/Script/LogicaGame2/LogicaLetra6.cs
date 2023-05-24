@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class LogicaLetra5 : MonoBehaviour
+public class LogicaLetra6 : MonoBehaviour
 {
     public float velocidad;
     public int contador = 0;
     public bool adentro = false;
-    public AudioSource Do;
+    public AudioSource Re;
     // Start is called before the first frame update
- 
+    void Start()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,12 +28,12 @@ public class LogicaLetra5 : MonoBehaviour
             adentro = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            
+            this.Re.Play();
             if (adentro) 
             {
-                this.Do.Play();
+                
                 GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
                 
                 Destroy(this.gameObject);

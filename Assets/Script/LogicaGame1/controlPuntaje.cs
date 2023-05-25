@@ -36,7 +36,7 @@ public class controlPuntaje : MonoBehaviour
             this.red.gameObject.SetActive(false);
             this.Jugador2.gameObject.SetActive(false);
             Jugador1.gameObject.transform.localPosition = new Vector3(0, 2, 64);
-            //StartCoroutine(this.CambiarEscena());
+            StartCoroutine(this.CambiarEscena());
         }
         else if (this.puntajeJugador2 >= this.metaParaGanar)
         {
@@ -47,7 +47,7 @@ public class controlPuntaje : MonoBehaviour
             this.red.gameObject.SetActive(false);
             this.Jugador1.gameObject.SetActive(false);
             Jugador2.gameObject.transform.localPosition = new Vector3(0, 2, 64);
-            //StartCoroutine(this.CambiarEscena());
+            StartCoroutine(this.CambiarEscena());
         }
     }
 
@@ -72,8 +72,9 @@ public class controlPuntaje : MonoBehaviour
     
     public IEnumerator CambiarEscena()
     {
-        anim.SetTrigger("Entrada");
+        
         yield return new WaitForSeconds(1);
+        anim.SetTrigger("Entrada");
         SceneManager.LoadScene(3);
     }
 }

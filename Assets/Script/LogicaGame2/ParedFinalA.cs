@@ -27,8 +27,9 @@ public class ParedFinalA : MonoBehaviour
 
     public IEnumerator CambiarEscena()
     {
-        anim.SetTrigger("Entrada");
+        
         yield return new WaitForSeconds(1);
+        anim.SetTrigger("Entrada");
         SceneManager.LoadScene(6);
     }
 }

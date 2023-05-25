@@ -23,16 +23,4 @@ public class SeleccionarNivel : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void CargarRestart()
-    {
-        StartCoroutine(CargarReinicio());
-    }
-
-    public IEnumerator CargarReinicio()
-    {
-        ControladorEscena.Instace.IdEscena();
-        anim.SetTrigger("Entrada");
-        yield return new WaitForSeconds(1);
-        //SceneManager.LoadScene(sceneIndex);
-    }
 }

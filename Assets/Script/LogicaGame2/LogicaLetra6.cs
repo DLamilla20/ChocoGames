@@ -8,7 +8,7 @@ public class LogicaLetra6 : MonoBehaviour
     public float velocidad;
     public int contador = 0;
     public bool adentro = false;
-    public AudioSource Re;
+    public AudioClip Re;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,15 +30,19 @@ public class LogicaLetra6 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            this.Re.Play();
+            //this.Re.Play();
             if (adentro) 
             {
-                
+                ControladorSonido.Instance.EjecutarSonido(Re);
                 GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
                 
                 Destroy(this.gameObject);
                 
             }
+        }
+        else if (!adentro)
+        {
+            Destroy(this.gameObject, 5f);
         }
     }
 
@@ -57,4 +61,5 @@ public class LogicaLetra6 : MonoBehaviour
             contador--;
         }
     }
+
 }

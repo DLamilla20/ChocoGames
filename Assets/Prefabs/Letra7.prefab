@@ -187,7 +187,7 @@ MonoBehaviour:
   velocidad: 3.5
   contador: 0
   adentro: 0
-  Mi: {fileID: 446611823114426739}
+  Mi: {fileID: 8300000, guid: 4247e950bdc820d4082f6f76f1fe5d7c, type: 3}
 --- !u!1 &9175185772570291877
 GameObject:
   m_ObjectHideFlags: 0

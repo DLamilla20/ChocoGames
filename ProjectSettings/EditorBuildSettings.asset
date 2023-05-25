@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game3.unity
     guid: f12363db236238141984c64f3e639a5b
   - enabled: 1
-    path: Assets/Scenes/PantallaFinal.unity
+    path: Assets/Scenes/PantallaFinal1.unity
     guid: 5f1494edca64ede46823b3aa7b8bce00
+  - enabled: 1
+    path: Assets/Scenes/PantallaFinal2.unity
+    guid: 8d57b84f806909c4da48ab8627b9ac9f
   m_configObjects: {}

@@ -187,7 +187,7 @@ MonoBehaviour:
   velocidad: 3.5
   contador: 0
   adentro: 0
-  Sol: {fileID: 9021062890506095418}
+  Sol: {fileID: 8300000, guid: ce05f5a0c4bb9244e8ab20c79b8ee6ec, type: 3}
 --- !u!1 &6880430991636487885
 GameObject:
   m_ObjectHideFlags: 0

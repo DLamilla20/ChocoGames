@@ -8,6 +8,7 @@ public class Generador1A : MonoBehaviour
     private float tiempoEntreLetras;
     private float comienzoDeTiempo;
     public JugadorLadoA pt;
+    public RandomNumero rn;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,11 @@ public class Generador1A : MonoBehaviour
     {
         if (tiempoEntreLetras <= 0)
         {
-            int random = Random.Range(0, Gene1A.Length);
-            Instantiate(Gene1A[random],this.transform.position,Quaternion.identity);
+            //int random = Random.Range(0, Gene1A.Length);
+
+            //Instantiate(Gene1A[random],this.transform.position,Quaternion.identity);
+            int pos = rn.x;
+            Instantiate(Gene1A[pos], this.transform.position, Quaternion.identity);
 
             int pts = pt.puntaje;
             if (pts <= 10)
@@ -37,6 +41,21 @@ public class Generador1A : MonoBehaviour
             }
 
             tiempoEntreLetras = comienzoDeTiempo;
+
+            //pos++;
+
+            //switch (pos)
+            //{
+            //    case 1: pos = 3; break;
+            //    case 2: pos = 2; break;
+            //    case 3: pos = 1; break;
+            //    case 4: pos = 2; break;
+            //    case 5: pos = 1; break;
+            //    case 6: pos = 3; break;
+            //    case 7: pos = 1; break;
+            //    case 8: pos = 2; break;
+            //    default: pos = 0; break;
+            //}
         }
         else
         {

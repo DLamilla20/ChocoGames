@@ -37,6 +37,10 @@ public class LogicaLetra2 : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        else if (!adentro)
+        {
+            Destroy(this.gameObject, 5f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

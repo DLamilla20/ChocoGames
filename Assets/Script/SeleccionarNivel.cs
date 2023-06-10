@@ -23,5 +23,4 @@ public class SeleccionarNivel : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-
 }

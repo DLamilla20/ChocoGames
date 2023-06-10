@@ -186,3 +186,4 @@ MonoBehaviour:
   velocidad: 3.5
   contador: 0
   adentro: 0
+  Do: {fileID: 8300000, guid: 9791e019c60f48047a44b1c93367f8ab, type: 3}

@@ -9,10 +9,13 @@ public class LogicaLetra6 : MonoBehaviour
     public int contador = 0;
     public bool adentro = false;
     public AudioClip Re;
+    private Animator animator;
+    private SpriteRenderer sp;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GameObject.Find("Jugador1").GetComponentInChildren<Animator>();
+        sp = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -33,11 +36,16 @@ public class LogicaLetra6 : MonoBehaviour
             //this.Re.Play();
             if (adentro) 
             {
+                sp.enabled = false;
                 ControladorSonido.Instance.EjecutarSonido(Re);
-                ControladorBaile.Instance.Baile(2);
+                //ControladorBaile.Instance.Baile(2);
+                print("Hola2");
+                string cIzquierda = "cIzquierda";
+                animator.SetBool(cIzquierda, true);
+                StartCoroutine(Espera(cIzquierda));
                 GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
 
-                Destroy(this.gameObject);
+                Destroy(this.gameObject, 1.26f);
                 
             }
         }
@@ -63,6 +71,10 @@ public class LogicaLetra6 : MonoBehaviour
         }
     }
 
-    
 
+    public IEnumerator Espera(string tipo)
+    {
+        yield return new WaitForSeconds(1.2f);
+        animator.SetBool(tipo, false);
+    }
 }

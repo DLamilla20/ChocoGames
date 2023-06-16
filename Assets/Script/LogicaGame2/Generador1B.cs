@@ -6,7 +6,7 @@ public class Generador1B : MonoBehaviour
 {
     public GameObject[] Gene1B;
     private float tiempoEntreLetras;
-    private float comienzoDeTiempo = 1.5f; //1.5 1.1 0.7
+    private float comienzoDeTiempo = 1.15f; //1.5 1.1 0.7
     public JugadorLadoB pt;
     public RandomNumero rn;
     // Start is called before the first frame update

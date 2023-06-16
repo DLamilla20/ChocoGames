@@ -10,7 +10,10 @@ public class LogicaLetra5 : MonoBehaviour
     public bool adentro = false;
     public AudioClip Do;
     // Start is called before the first frame update
- 
+    void Start()
+    {
+           
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +33,9 @@ public class LogicaLetra5 : MonoBehaviour
             if (adentro) 
             {
                 ControladorSonido.Instance.EjecutarSonido(Do);
+                ControladorBaile.Instance.Baile(1);
                 GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
+                
                 
                 Destroy(this.gameObject);
 
@@ -58,5 +63,7 @@ public class LogicaLetra5 : MonoBehaviour
             contador--;
         }
     }
+
+    
     
 }

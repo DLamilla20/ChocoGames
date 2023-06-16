@@ -12,7 +12,7 @@ public class LogicaLetra7 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -34,8 +34,9 @@ public class LogicaLetra7 : MonoBehaviour
             if (adentro) 
             {
                 ControladorSonido.Instance.EjecutarSonido(Mi);
+                ControladorBaile.Instance.Baile(3);
                 GameObject.Find("Casilla2").GetComponent<JugadorLadoB>().PuntajeLadoB();
-                
+
                 Destroy(this.gameObject);
                 
             }
@@ -61,5 +62,7 @@ public class LogicaLetra7 : MonoBehaviour
             contador--;
         }
     }
+
+    
 
 }

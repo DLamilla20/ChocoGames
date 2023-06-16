@@ -6,7 +6,7 @@ public class Generador1A : MonoBehaviour
 {
     public GameObject[] Gene1A;
     private float tiempoEntreLetras;
-    private float comienzoDeTiempo;
+    private float comienzoDeTiempo = 1.5f;
     public JugadorLadoA pt;
     public RandomNumero rn;
     // Start is called before the first frame update
@@ -26,19 +26,19 @@ public class Generador1A : MonoBehaviour
             int pos = rn.x;
             Instantiate(Gene1A[pos], this.transform.position, Quaternion.identity);
 
-            int pts = pt.puntaje;
-            if (pts <= 10)
-            {
-                comienzoDeTiempo = 1.5f;
-            }
-            else if (pts >= 10 && pts <= 20)
-            {
-                comienzoDeTiempo = 1.1f;
-            }
-            else
-            {
-                comienzoDeTiempo = 0.7f;
-            }
+            //int pts = pt.puntaje;
+            //if (pts <= 10)
+            //{
+            //    comienzoDeTiempo = 1.5f;
+            //}
+            //else if (pts >= 10 && pts <= 20)
+            //{
+            //    comienzoDeTiempo = 1.1f;
+            //}
+            //else
+            //{
+            //    comienzoDeTiempo = 0.7f;
+            //}
 
             tiempoEntreLetras = comienzoDeTiempo;
 

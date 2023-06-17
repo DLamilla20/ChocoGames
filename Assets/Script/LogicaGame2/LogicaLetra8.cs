@@ -34,13 +34,10 @@ public class LogicaLetra8 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //this.Sol.Play();
             if (adentro) 
             {
                 sp.enabled = false;
                 ControladorSonido.Instance.EjecutarSonido(Sol);
-                //ControladorBaile.Instance.Baile(4);
-                print("Hola4");
                 string cDerecha = "cDerecha";
                 animator.SetBool(cDerecha, true);
                 StartCoroutine(Espera(cDerecha));

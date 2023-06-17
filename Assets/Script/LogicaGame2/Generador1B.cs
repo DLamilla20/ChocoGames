@@ -20,24 +20,10 @@ public class Generador1B : MonoBehaviour
     {
         if (tiempoEntreLetras <= 0)
         {
-            //int random = Random.Range(0, Gene1B.Length);
-            //Instantiate(Gene1B[random],this.transform.position,Quaternion.identity);
+            
             int pos = rn.x;
             Instantiate(Gene1B[pos], this.transform.position, Quaternion.identity);
 
-            //int pts = pt.puntaje;
-            //if (pts <= 10)
-            //{
-            //    comienzoDeTiempo = 1.5f;
-            //}
-            //else if (pts >= 10 && pts <= 20)
-            //{
-            //    comienzoDeTiempo = 1.1f;
-            //}
-            //else
-            //{
-            //    comienzoDeTiempo = 0.7f;
-            //}
             
             
             tiempoEntreLetras = comienzoDeTiempo;

@@ -33,13 +33,10 @@ public class LogicaLetra7 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            //this.Mi.Play();
             if (adentro) 
             {
                 sp.enabled = false;
                 ControladorSonido.Instance.EjecutarSonido(Mi);
-                //ControladorBaile.Instance.Baile(3);
-                print("Hola3");
                 string cAbajo = "cAbajo";
                 animator.SetBool(cAbajo, true);
                 StartCoroutine(Espera(cAbajo));

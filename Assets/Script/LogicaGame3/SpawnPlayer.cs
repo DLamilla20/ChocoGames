@@ -13,8 +13,7 @@ public class SpawnPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string name = PhotonNetwork.CurrentRoom.Name;
-        roomName.text = name;
+        
 
         if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
@@ -30,6 +29,10 @@ public class SpawnPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (PhotonNetwork.InRoom)
+        {
+            string name = PhotonNetwork.CurrentRoom.Name;
+            roomName.text = name;
+        }
     }
 }

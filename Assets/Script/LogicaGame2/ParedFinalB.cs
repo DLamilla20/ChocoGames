@@ -34,7 +34,7 @@ public class ParedFinalB : MonoBehaviour
         
         yield return new WaitForSeconds(1);
         anim.SetTrigger("Entrada");
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(4);
     }
 
 }

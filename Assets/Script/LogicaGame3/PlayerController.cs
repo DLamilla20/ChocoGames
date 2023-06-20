@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     PhotonView view;
     Transform cameraTransform;
+    Popup popUpScrip;
 
     private float x;
     private float y;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         view = GetComponent<PhotonView>();
         cameraTransform = GetComponentInChildren<Camera>().transform;
+        popUpScrip = FindObjectOfType<Popup>();
 
         if (!view.IsMine)
         {
@@ -67,10 +69,10 @@ public class PlayerController : MonoBehaviour
     {
         if (view.IsMine)
         {
-            if (collision.tag == "Fin")
+            if (collision.tag == "Pelota")
             {
-                print("Paso");
-                //textScript.TextoMostrar();
+                
+                popUpScrip.ShowMessage();
             }
         }
 

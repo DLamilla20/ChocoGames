@@ -33,13 +33,10 @@ public class LogicaLetra6 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //this.Re.Play();
             if (adentro) 
             {
                 sp.enabled = false;
                 ControladorSonido.Instance.EjecutarSonido(Re);
-                //ControladorBaile.Instance.Baile(2);
-                print("Hola2");
                 string cIzquierda = "cIzquierda";
                 animator.SetBool(cIzquierda, true);
                 StartCoroutine(Espera(cIzquierda));

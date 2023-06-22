@@ -8,7 +8,7 @@ public class MovePlayer1 : MonoBehaviour
     public float speed;
     private float x;
     private float y;
-    float resetSpeed = 5.5f;
+    float resetSpeed = 8f;
     public float dashSpeed;
     public float dashTime;
     private Rigidbody2D rb;
@@ -17,10 +17,12 @@ public class MovePlayer1 : MonoBehaviour
     public TextMeshProUGUI winnerText;
     public GameObject player2;
     public ParticleSystem particles;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,20 @@ public class MovePlayer1 : MonoBehaviour
         y = Input.GetAxisRaw("Vertical1");
 
         rb.velocity = new Vector2(x * speed, y * speed);
+        if ((x != 0) || (y != 0))
+        {
+            anim.SetBool("estaMoviendose", true);
+        }
+        else
+        {
+            anim.SetBool("estaMoviendose", false);
+        }
+
+        if (x != 0 && cont != 1)
+        {
+            VoltearJugador(x);
+        }
+        
 
         if (Input.GetKeyDown(KeyCode.Space) && (x != 0 || y != 0))
         {
@@ -58,6 +74,22 @@ public class MovePlayer1 : MonoBehaviour
             cont = 1;
             winnerText.text = "CHIPO";
         }
+
+    }
+
+    private void VoltearJugador(float dirJugador)
+    {
+        Vector3 escalaJugador = transform.localScale;
+        if (dirJugador < 0)
+        {
+            escalaJugador.x = Mathf.Abs(escalaJugador.x) * -1;
+        }
+        else if (dirJugador > 0)
+        {
+            escalaJugador.x = Mathf.Abs(escalaJugador.x);
+        }
+
+        transform.localScale = escalaJugador;
 
     }
 }

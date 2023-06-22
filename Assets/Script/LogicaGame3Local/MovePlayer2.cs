@@ -8,19 +8,21 @@ public class MovePlayer2 : MonoBehaviour
     public float speed;
     private float x;
     private float y;
-    float resetSpeed = 5.5f;
+    float resetSpeed = 8f;
     public float dashSpeed;
     public float dashTime;
-    private Rigidbody2D rb;
+    private Rigidbody2D rb1;
     public GameObject gameOver;
     private int cont;
     public TextMeshProUGUI winnerText;
     public GameObject player1;
     public ParticleSystem particles;
+    private Animator anim1;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb1 = GetComponent<Rigidbody2D>();
+        anim1 = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,16 +31,30 @@ public class MovePlayer2 : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal5");
         y = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(x * speed, y * speed);
+        rb1.velocity = new Vector2(x * speed, y * speed);
 
-        if (Input.GetKeyDown(KeyCode.Space) && (x != 0 || y != 0))
+        if ((x != 0) || (y != 0))
+        {
+            anim1.SetBool("estaMoviendose", true);
+        }
+        else
+        {
+            anim1.SetBool("estaMoviendose", false);
+        }
+
+        if (x != 0 && cont != 1)
+        {
+            VoltearJugador(x);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M) && (x != 0 || y != 0))
         {
             particles.Play();
             StartCoroutine(Dash());
         }
         if (cont == 1)
         {
-            rb.velocity = Vector2.zero;
+            rb1.velocity = Vector2.zero;
             player1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
@@ -58,6 +74,22 @@ public class MovePlayer2 : MonoBehaviour
             cont = 1;
             winnerText.text = "CHOPO";
         }
+
+    }
+
+    private void VoltearJugador(float dirJugador)
+    {
+        Vector3 escalaJugador = transform.localScale;
+        if (dirJugador < 0)
+        {
+            escalaJugador.x = Mathf.Abs(escalaJugador.x) ;
+        }
+        else if (dirJugador > 0)
+        {
+            escalaJugador.x = Mathf.Abs(escalaJugador.x) * -1;
+        }
+
+        transform.localScale = escalaJugador;
 
     }
 }

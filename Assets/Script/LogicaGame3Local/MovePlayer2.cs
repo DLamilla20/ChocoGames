@@ -17,10 +17,12 @@ public class MovePlayer2 : MonoBehaviour
     public TextMeshProUGUI winnerText;
     public GameObject player1;
     public ParticleSystem particles;
+    private Animator anim1;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim1 = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -31,7 +33,18 @@ public class MovePlayer2 : MonoBehaviour
 
         rb.velocity = new Vector2(x * speed, y * speed);
 
-        if (Input.GetKeyDown(KeyCode.Space) && (x != 0 || y != 0))
+        if ((x != 0) || (y != 0))
+        {
+            anim1.SetBool("estaMoviendose", true);
+        }
+        else
+        {
+            anim1.SetBool("estaMoviendose", false);
+        }
+
+        VoltearJugador(x);
+
+        if (Input.GetKeyDown(KeyCode.M) && (x != 0 || y != 0))
         {
             particles.Play();
             StartCoroutine(Dash());
@@ -58,6 +71,22 @@ public class MovePlayer2 : MonoBehaviour
             cont = 1;
             winnerText.text = "CHOPO";
         }
+
+    }
+
+    private void VoltearJugador(float dirJugador)
+    {
+        Vector3 escalaJugador = transform.localScale;
+        if (dirJugador < 0)
+        {
+            escalaJugador.x = Mathf.Abs(escalaJugador.x) ;
+        }
+        else if (dirJugador > 0)
+        {
+            escalaJugador.x = Mathf.Abs(escalaJugador.x) * -1;
+        }
+
+        transform.localScale = escalaJugador;
 
     }
 }

@@ -8,7 +8,7 @@ public class MovePlayer1 : MonoBehaviour
     public float speed;
     private float x;
     private float y;
-    float resetSpeed = 5.5f;
+    float resetSpeed = 8f;
     public float dashSpeed;
     public float dashTime;
     private Rigidbody2D rb;
@@ -41,7 +41,11 @@ public class MovePlayer1 : MonoBehaviour
             anim.SetBool("estaMoviendose", false);
         }
 
-        VoltearJugador(x);
+        if (x != 0 && cont != 1)
+        {
+            VoltearJugador(x);
+        }
+        
 
         if (Input.GetKeyDown(KeyCode.Space) && (x != 0 || y != 0))
         {

@@ -8,10 +8,10 @@ public class MovePlayer2 : MonoBehaviour
     public float speed;
     private float x;
     private float y;
-    float resetSpeed = 5.5f;
+    float resetSpeed = 8f;
     public float dashSpeed;
     public float dashTime;
-    private Rigidbody2D rb;
+    private Rigidbody2D rb1;
     public GameObject gameOver;
     private int cont;
     public TextMeshProUGUI winnerText;
@@ -21,7 +21,7 @@ public class MovePlayer2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb1 = GetComponent<Rigidbody2D>();
         anim1 = GetComponent<Animator>();
     }
 
@@ -31,7 +31,7 @@ public class MovePlayer2 : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal5");
         y = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(x * speed, y * speed);
+        rb1.velocity = new Vector2(x * speed, y * speed);
 
         if ((x != 0) || (y != 0))
         {
@@ -42,7 +42,10 @@ public class MovePlayer2 : MonoBehaviour
             anim1.SetBool("estaMoviendose", false);
         }
 
-        VoltearJugador(x);
+        if (x != 0 && cont != 1)
+        {
+            VoltearJugador(x);
+        }
 
         if (Input.GetKeyDown(KeyCode.M) && (x != 0 || y != 0))
         {
@@ -51,7 +54,7 @@ public class MovePlayer2 : MonoBehaviour
         }
         if (cont == 1)
         {
-            rb.velocity = Vector2.zero;
+            rb1.velocity = Vector2.zero;
             player1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }

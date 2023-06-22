@@ -9,6 +9,7 @@ TagManager:
   - Letra1A
   - Letra1B
   - Casilla1B
+  - Pelota
   layers:
   - Default
   - TransparentFX

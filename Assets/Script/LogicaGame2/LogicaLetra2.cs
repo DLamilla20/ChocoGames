@@ -9,10 +9,13 @@ public class LogicaLetra2 : MonoBehaviour
     public int contador = 0;
     public bool adentro = false;
     public AudioClip Re;
+    private Animator animator;
+    private SpriteRenderer sp;
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GameObject.Find("Jugador2").GetComponentInChildren<Animator>();
+        sp = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,9 +35,13 @@ public class LogicaLetra2 : MonoBehaviour
         {
             if (adentro) 
             {
+                sp.enabled = false;
                 ControladorSonido.Instance.EjecutarSonido(Re);
+                string cFArriba = "cFArriba";
+                animator.SetBool(cFArriba, true);
+                StartCoroutine(Espera(cFArriba));
                 GameObject.Find("Casilla1").GetComponent<JugadorLadoA>().PuntajeLadoA();               
-                Destroy(this.gameObject);
+                Destroy(this.gameObject, 1.26f);
             }
         }
         else if (!adentro)
@@ -57,5 +64,11 @@ public class LogicaLetra2 : MonoBehaviour
         {
             contador--;
         }
+    }
+
+    public IEnumerator Espera(string tipo)
+    {
+        yield return new WaitForSeconds(1.2f);
+        animator.SetBool(tipo, false);
     }
 }
